@@ -5,7 +5,7 @@ class SortableController extends \Backend\Behaviors\ReorderController
     /**
      * @inheritDoc
      */
-    public function reorder($product_id = null)
+    public function reorder()
     {
         $this->addJs('/modules/backend/behaviors/reordercontroller/assets/js/october.reorder.js', 'core');
 
@@ -14,11 +14,6 @@ class SortableController extends \Backend\Behaviors\ReorderController
 
         $this->validateModel();
         $this->prepareVars();
-
-        if (!empty($product_id)) {
-            $reorderRecords = $this->getRecords();
-            $this->vars['reorderRecords'] = $reorderRecords->where('product_id', $product_id);
-        }
 
         return $this->makeView('$/anikin/extendedsortable/behaviors/sortablecontroller/reorder');
     }
