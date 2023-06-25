@@ -1,0 +1,3 @@
+title: Reorder products
+nameFrom: name
+modelClass: Author\Plugin\Models\Product
